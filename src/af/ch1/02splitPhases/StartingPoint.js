@@ -27,16 +27,18 @@ let invoices = [{
 let rlt = statement(invoices[0], plays);
 console.log(rlt);
 
-function statement(invoice, plays) {
+function statement(invoice, plays){
+    return renderPlainText(createStatementData(invoice, plays))
+}
+
+function createStatementData(invoice, plays) {
     const statementData = {};
     statementData.customer = invoice.customer;
     statementData.performances = invoice.performances.map(enrichPerformance);
     statementData.totalAmount = totalAmount(statementData);
     statementData.totalVolumeCredits = totalVolumeCredits(statementData);
-   return renderPlainText(statementData, plays);
+    return statementData; 
     
-
-
     /*
         https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
         arr.reduce(callback[accumulator, currentValue, currentIndex, array], initialValue)
