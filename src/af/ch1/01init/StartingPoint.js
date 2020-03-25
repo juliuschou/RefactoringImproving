@@ -51,7 +51,7 @@ function statement(invoice, plays) {
     return result;
 
 
-    function volumeCreditsFor(){
+    function volumeCreditsFor(perf){
         let volumeCredits = 0;
         volumeCredits += Math.max(perf.audience - 30, 0);
 
