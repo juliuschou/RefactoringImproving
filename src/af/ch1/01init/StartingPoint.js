@@ -1,5 +1,5 @@
 // ./node_modules/.bin/babel src --out-dir dist
-// node ./dist/af/ch1/01init/StartingPoint.js
+// node ./dist/bf/ch1/01init/StartingPoint.js
 
 let plays = {
     hamlet: { name: 'Hamlet', type: 'tragedy' },
@@ -69,7 +69,7 @@ function statement(invoice, plays) {
     return result;
 
 
-    function amountFor(perf, play){
+    function amountFor(){
         let thisAmount = 0;
         switch (play.type) {
             case 'tragedy':
